@@ -14,6 +14,10 @@
     fill-opacity: 1;
 }
 
+text.pie-slice {
+  fill: '#ccc' !important;
+}
+
 /*
  * Page specific styles
  */
@@ -22,4 +26,20 @@
         height:50px;
 	padding: 5px;
 	margin: 5px;
+}
+
+.inlinetitle
+{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    display: inline-block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;    
 }
