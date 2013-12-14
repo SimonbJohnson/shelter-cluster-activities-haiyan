@@ -15,13 +15,13 @@
   </head>
   <body>
     <div class ="col-sm-4 col-md-offset4" id="loading">
-        <h1>Loading... (~2.5MB)</h1><small>Does not work on IE8 or older</small>
+        <h1>Loading... (~1.5MB)</h1><small>Does not work on IE8 or older</small>
     </div>
     <div class="container" id="dashboard">
       <div class="row">
         <div class="col-lg-3">
           <h3>Typhoon Haiyan - Shelter Cluster Activities</h3>
-          <div class="col-xs-12">Explore Shelter Cluster data for Typhoon Haiyan. Source <a href="data/Shelter_cluster_activities_haiyan.csv" target="_blank" >Shelter Cluster</a> 7th December</div>
+          <div class="col-xs-12">Explore Shelter Cluster data for Typhoon Haiyan. Source <a href="data/Shelter_cluster_activities_haiyan.csv" target="_blank" >Shelter Cluster</a> 13th December</div>
           <div id="count-info" class="col-xs-12">
             <span class="filter-count "></span> selected out of <span class="total-count "></span> records
           </div>
@@ -29,7 +29,7 @@
             <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a>
           </div>
         </div>
-        <div class ="col-lg-9">
+        <div class="col-lg-9">
           <div class="row">
             <div id="status" class="col-xs-4">
                 <div class="inlinetitle">Status</div>
@@ -170,7 +170,7 @@
                             
             d3.json("data/Phil_provinces.geojson", function (provincesJSON) {
                 
-                map_chart.width(640).height(400)
+                map_chart.width(700).height(400)
                     .dimension(cf.pcode)
                     .group(pcode)
                     .colors(['#AAAAAA', '#7f1416'])
