@@ -38,6 +38,7 @@ text.pie-slice {
     line-height: 1.1;
     color: inherit;
     display: inline-block;
+    vertical-align:top;
     -webkit-margin-before: 1.33em;
     -webkit-margin-after: 1.33em;
     -webkit-margin-start: 0px;
