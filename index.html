@@ -93,6 +93,8 @@
         }
         $('#dashboard').hide();
         $('#map').hide();
+        
+        var idlist = []; //used to check for duplications when summing dimensions across benefactors
         var target_chart = dc.pieChart("#target");
         var intervention_chart = dc.pieChart("#intervention");
         var status_chart = dc.pieChart("#status");
@@ -109,11 +111,19 @@
         cf.organisation = cf.dimension(function(d) { return d.AGENCY; });
         cf.mcode = cf.dimension(function(d) { return d.MCODE; });
             
-        var target = cf.target.group();
-        var intervention = cf.intervention.group();
-        var stat = cf.status.group();
+        var target = cf.target.group().reduceSum(function(d,i){
+            return d.HH;
+        });
+        var intervention = cf.intervention.group().reduceSum(function(d,i){
+            return d.HH;
+        });
+        var stat = cf.status.group().reduceSum(function(d,i){
+            return d.HH;
+        });
         var pcode = cf.pcode.group();
-        var organisation = cf.organisation.group();
+        var organisation = cf.organisation.group().reduceSum(function(d,i){
+            return d.HH;
+        });
         var mcode = cf.mcode.group();
         var all = cf.groupAll();
             
