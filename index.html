@@ -53,7 +53,7 @@
         </div>
         <div id="orgs" class="col-lg-4">
           <h4>Top Ten Organisations</h4>
-          <div class="col-xs-12">By activity count</div>
+          <div class="col-xs-12">By beneficiaries (1000s)</div>
         </div>       
       </div> 
       <div class="row row-logo">
@@ -122,7 +122,7 @@
         });
         var pcode = cf.pcode.group();
         var organisation = cf.organisation.group().reduceSum(function(d,i){
-            return d.HH;
+            return d.HH/1000;
         });
         var mcode = cf.mcode.group();
         var all = cf.groupAll();
@@ -163,7 +163,7 @@
             .colorDomain([0,1])
             .colorAccessor(function(d, i){return i%2;});
             
-        org_chart.width(320).height(300)
+        org_chart.width(375).height(300)
             .dimension(cf.organisation)
             .group(organisation)
             .elasticX(true)
